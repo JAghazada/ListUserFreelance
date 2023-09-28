@@ -15,7 +15,7 @@ app.set("views", `${__dirname}/views`);
 app.use(express.static(__dirname + "/views/assets"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use("/", Routes);
+// app.use("/", Routes);
 connect();
 
 app.listen(PORT,()=>{
@@ -24,3 +24,4 @@ app.listen(PORT,()=>{
 
 
 
+app.use("/.netlify/functions/api",Routes)
